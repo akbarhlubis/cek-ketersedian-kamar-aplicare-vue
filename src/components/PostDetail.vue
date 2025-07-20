@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { usePageTitle } from '../composables/usePageTitle'
 
 interface Post {
   id: number;
@@ -15,6 +16,7 @@ const props = defineProps<{
 const router = useRouter()
 const post = ref<Post | null>(null)
 const loading = ref(true)
+const { setPageTitle } = usePageTitle();
 
 const goBack = () => {
   router.push('/')
@@ -26,6 +28,11 @@ const fetchPost = async () => {
     const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${props.id}`)
     const json = await response.json()
     post.value = json
+    
+    // Update title with post title when loaded
+    if (json.title) {
+      setPageTitle(`Detail: ${json.title}`)
+    }
   } catch (error) {
     console.error('Error fetching post:', error)
   } finally {

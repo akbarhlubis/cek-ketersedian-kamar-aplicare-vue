@@ -183,7 +183,7 @@ https://faskes.bpjs-kesehatan.go.id/aplicares/Referensi/
 
 
 API: GetData Profil
-https://faskes.bpjs-kesehatan.go.id/aplicares/Pencarian/getData
+https://faskes.bpjs-kesehatan.go.id/aplicares/search/getData
 Payload
 {
   "kdppk": "0099R009",
