@@ -1,0 +1,191 @@
+API: GetAll List Provinsi with id
+https://faskes.bpjs-kesehatan.go.id/aplicares/Referensi/propinsi
+Response
+[
+  {
+    "id": "01",
+    "name": "NANGGROE ACEH DARUSSALAM"
+  },
+  {
+    "id": "02",
+    "name": "SUMATERA UTARA"
+  },
+  {
+    "id": "03",
+    "name": "SUMATERA BARAT"
+  },
+  {
+    "id": "04",
+    "name": "RIAU"
+  },
+  {
+    "id": "05",
+    "name": "JAMBI"
+  },
+  {
+    "id": "06",
+    "name": "SUMATERA SELATAN"
+  },
+  {
+    "id": "07",
+    "name": "BENGKULU"
+  },
+  {
+    "id": "08",
+    "name": "LAMPUNG"
+  },
+  {
+    "id": "09",
+    "name": "KEP. BANGKA BELITUNG"
+  },
+  {
+    "id": "10",
+    "name": "DKI JAKARTA"
+  },
+  {
+    "id": "11",
+    "name": "JAWA BARAT"
+  },
+  {
+    "id": "12",
+    "name": "JAWA TENGAH"
+  },
+  {
+    "id": "13",
+    "name": "D I  YOGYAKARTA"
+  },
+  {
+    "id": "14",
+    "name": "JAWA TIMUR"
+  },
+  {
+    "id": "15",
+    "name": "BANTEN"
+  },
+  {
+    "id": "16",
+    "name": "BALI"
+  },
+  {
+    "id": "17",
+    "name": "NUSA TENGGARA BARAT"
+  },
+  {
+    "id": "18",
+    "name": "NUSA TENGGARA TIMUR"
+  },
+  {
+    "id": "19",
+    "name": "KALIMANTAN BARAT"
+  },
+  {
+    "id": "20",
+    "name": "KALIMANTAN TENGAH"
+  },
+  {
+    "id": "21",
+    "name": "KALIMANTAN SELATAN"
+  },
+  {
+    "id": "22",
+    "name": "KALIMANTAN TIMUR"
+  },
+  {
+    "id": "23",
+    "name": "SULAWESI UTARA"
+  },
+  {
+    "id": "24",
+    "name": "SULAWESI TENGAH"
+  },
+  {
+    "id": "25",
+    "name": "SULAWESI SELATAN"
+  },
+  {
+    "id": "26",
+    "name": "SULAWESI TENGGARA"
+  },
+  {
+    "id": "27",
+    "name": "GORONTALO"
+  },
+  {
+    "id": "28",
+    "name": "MALUKU"
+  },
+  {
+    "id": "29",
+    "name": "MALUKU UTARA"
+  },
+  {
+    "id": "30",
+    "name": "PAPUA"
+  },
+  {
+    "id": "31",
+    "name": "PAPUA BARAT"
+  },
+  {
+    "id": "32",
+    "name": "SULAWESI BARAT"
+  },
+  {
+    "id": "33",
+    "name": "KEPULAUAN RIAU"
+  },
+  {
+    "id": "34",
+    "name": "KALIMANTAN UTARA"
+  },
+  {
+    "id": "35",
+    "name": "PAPUA SELATAN"
+  },
+  {
+    "id": "36",
+    "name": "PAPUA TENGAH"
+  },
+  {
+    "id": "37",
+    "name": "PAPUA PEGUNUNGAN"
+  },
+  {
+    "id": "38",
+    "name": "PAPUA BARAT DAYA"
+  },
+  {
+    "id": "99",
+    "name": "LUAR NEGERI"
+  }
+]
+
+API: GetAll List RSPKS
+https://faskes.bpjs-kesehatan.go.id/aplicares/Dashboard/getListRSPKS
+Response
+listrs: [,…]numberOfPages: 288 totalItem : "2.879"
+Payload
+{
+  "params": {
+    "sort": {},
+    "search": {},
+    "pagination": {
+      "start": 0,
+      "totalItemCount": 0,
+      "number": 10
+    }
+  },
+  "kddati2": null
+}
+
+API: GetDati
+https://faskes.bpjs-kesehatan.go.id/aplicares/Referensi/
+
+
+API: GetData Profil
+https://faskes.bpjs-kesehatan.go.id/aplicares/Pencarian/getData
+Payload
+{
+  "kdppk": "0099R009",
+  "jnsppk": "R"
+}
