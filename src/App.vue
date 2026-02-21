@@ -1,30 +1,42 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import TopNav from './components/TopNav.vue'
+import BottomNav from './components/BottomNav.vue'
+
+const route = useRoute()
+
+const showBottomNav = computed(() => !route.path.startsWith('/rs/'))
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
-</template>
+  <div class="min-h-screen flex flex-col bg-slate-50">
+    <!-- Desktop Top Navbar -->
+    <TopNav />
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+    <!-- Main Content -->
+    <main class="flex-1">
+      <RouterView />
+    </main>
+
+    <!-- Mobile Bottom Nav (hidden on md+) -->
+    <BottomNav v-if="showBottomNav" />
+
+    <!-- Desktop Footer -->
+    <footer class="hidden md:block border-t border-gray-200 bg-white mt-auto">
+      <div class="content-container py-6">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <div class="w-7 h-7 bg-green-600 rounded-lg flex items-center justify-center">
+              <i class="pi pi-building text-white text-xs" />
+            </div>
+            <span class="text-sm font-semibold text-gray-700">Cek Kamar RS</span>
+          </div>
+          <p class="text-xs text-gray-400">
+            Data dari Aplicare BPJS Kesehatan &middot; Dibuat dengan Vue 3 + PrimeVue
+          </p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</template>
