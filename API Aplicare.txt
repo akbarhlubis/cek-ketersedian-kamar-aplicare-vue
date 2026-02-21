@@ -1,0 +1,352 @@
+API: GetAll List Provinsi with id
+Request URL: https://faskes.bpjs-kesehatan.go.id/aplicares/Referensi/propinsi
+Request Method: GET
+Remote Address: 160.25.179.89:443
+Response:
+[
+    {
+        "id": "01",
+        "name": "NANGGROE ACEH DARUSSALAM"
+    },
+    {
+        "id": "02",
+        "name": "SUMATERA UTARA"
+    },
+    {
+        "id": "03",
+        "name": "SUMATERA BARAT"
+    },
+]
+
+API: GetAll List RSPKS
+Request URL: https://faskes.bpjs-kesehatan.go.id/aplicares/Dashboard/getListRSPKS
+Request Method: POST
+Remote Address: 160.25.179.89:443
+Response
+{
+    "totalItem": "2.929",
+    "numberOfPages": 293,
+    "listrs": [
+        {
+            "no": "1",
+            "kdppk": "0001R001",
+            "nmppk": "RSU CUT NYAK DHIEN",
+            "nmjlnppk": "0",
+            "vvip": 0,
+            "vip": 1,
+            "utama": 0,
+            "I": 1,
+            "II": 4,
+            "III": 9,
+            "ICU": 4,
+            "ICCU": 0,
+            "NICU": 0,
+            "PICU": 0,
+            "IGD": 0,
+            "UGD": 0,
+            "BERSALIN": 0,
+            "HCU": 0,
+            "ISOLASI": 4
+        },
+    ]
+}
+API: Get List dati with id
+Request URL: https://faskes.bpjs-kesehatan.go.id/aplicares/Referensi/dati2/08
+Request Method: GET
+Remote Address: 160.25.179.89:443
+Response
+[
+    {
+        "id": "0021",
+        "name": "KAB. NIAS"
+    },
+    {
+        "id": "0022",
+        "name": "KAB. MANDAILING NATAL"
+    },
+]
+API: GetData Profil RS
+Request URL: https://faskes.bpjs-kesehatan.go.id/aplicares/Pencarian/getData
+Request Method: POST
+Remote Address
+160.25.179.89:443
+Payload
+{
+    "kdppk": "0001R001",
+    "jnsppk": "R"
+}
+Response
+{
+    "profil": {
+        "kdppk": "0001R001",
+        "jnsppk": "",
+        "nmppk": "RSU CUT NYAK DHIEN",
+        "telpppk": "0641-0621039",
+        "nmjlnppk": "JL. TM BAHRUM NO. 1 LANGSA",
+        "lat": 4.47947,
+        "lng": 97.9566,
+        "tglhbspksppk": "31-12-2026"
+    },
+    "detil": {
+        "vvip": 0,
+        "vip": 1,
+        "utama": 0,
+        "I": 1,
+        "II": 4,
+        "III": 9,
+        "ICU": 4,
+        "ICCU": 0,
+        "NICU": 0,
+        "PICU": 0,
+        "IGD": 0,
+        "UGD": 0,
+        "BERSALIN": 0,
+        "HCU": 0,
+        "ISOLASI": 4
+    },
+    "vip": [
+        {
+            "kdppk": "0001R001",
+            "nama_kelas": "VIP",
+            "nama_ruang": "Alamanda Vip",
+            "jumlah_kamar": 6,
+            "jumlah_kosong": 1,
+            "pria": 1,
+            "wanita": 1,
+            "last_narik": "21\/02\/2026 09:01:16",
+            "last_update": "21\/02\/2026 07:01:32"
+        }
+    ],
+    "Khusus": [
+        {
+            "kdppk": "0001R001",
+            "nama_kelas": "ICU",
+            "nama_ruang": "Kamar ICU",
+            "jumlah_kamar": 4,
+            "jumlah_kosong": 4,
+            "last_narik": "21\/02\/2026 09:01:16",
+            "pria": 4,
+            "wanita": 4,
+            "last_update": "21\/02\/2026 09:01:03"
+        },
+        {
+            "kdppk": "0001R001",
+            "nama_kelas": "RUANG ISOLASI",
+            "nama_ruang": "Ruang Isolasi",
+            "jumlah_kamar": 4,
+            "jumlah_kosong": 4,
+            "last_narik": "21\/02\/2026 09:01:16",
+            "pria": 4,
+            "wanita": 4,
+            "last_update": "21\/02\/2026 09:01:05"
+        }
+    ],
+    "satu": [
+        {
+            "kdppk": "0001R001",
+            "nama_kelas": "KELAS I",
+            "nama_ruang": "Bougenville Kelas 1",
+            "jumlah_kamar": 8,
+            "jumlah_kosong": 0,
+            "last_narik": "21\/02\/2026 09:01:16",
+            "pria": 0,
+            "wanita": 0,
+            "last_update": "21\/02\/2026 09:01:07"
+        },
+        {
+            "kdppk": "0001R001",
+            "nama_kelas": "KELAS I",
+            "nama_ruang": "Tulip kelas 1",
+            "jumlah_kamar": 5,
+            "jumlah_kosong": 1,
+            "last_narik": "21\/02\/2026 09:01:16",
+            "pria": 1,
+            "wanita": 1,
+            "last_update": "21\/02\/2026 09:01:08"
+        }
+    ],
+    "dua": [
+        {
+            "kdppk": "0001R001",
+            "nama_kelas": "KELAS II",
+            "nama_ruang": "Alamanda kelas 2",
+            "jumlah_kamar": 2,
+            "jumlah_kosong": 0,
+            "last_narik": "21\/02\/2026 09:01:16",
+            "pria": 0,
+            "wanita": 0,
+            "last_update": "21\/02\/2026 09:01:10"
+        },
+        {
+            "kdppk": "0001R001",
+            "nama_kelas": "KELAS II",
+            "nama_ruang": "Bougenville Kelas 2",
+            "jumlah_kamar": 6,
+            "jumlah_kosong": 1,
+            "last_narik": "21\/02\/2026 09:01:16",
+            "pria": 1,
+            "wanita": 1,
+            "last_update": "21\/02\/2026 09:01:11"
+        },
+        {
+            "kdppk": "0001R001",
+            "nama_kelas": "KELAS II",
+            "nama_ruang": "Tulip kelas 2",
+            "jumlah_kamar": 4,
+            "jumlah_kosong": 3,
+            "last_narik": "21\/02\/2026 09:01:16",
+            "pria": 3,
+            "wanita": 3,
+            "last_update": "21\/02\/2026 09:01:13"
+        }
+    ],
+    "tiga": [
+        {
+            "kdppk": "0001R001",
+            "nama_kelas": "KELAS III",
+            "nama_ruang": "Alamanda kelas 3",
+            "jumlah_kamar": 15,
+            "jumlah_kosong": 5,
+            "last_narik": "21\/02\/2026 09:01:16",
+            "pria": 5,
+            "wanita": 5,
+            "last_update": "21\/02\/2026 09:01:15"
+        },
+        {
+            "kdppk": "0001R001",
+            "nama_kelas": "KELAS III",
+            "nama_ruang": "Bougenville Kelas 3",
+            "jumlah_kamar": 4,
+            "jumlah_kosong": 1,
+            "last_narik": "21\/02\/2026 09:01:16",
+            "pria": 1,
+            "wanita": 1,
+            "last_update": "21\/02\/2026 09:01:16"
+        },
+        {
+            "kdppk": "0001R001",
+            "nama_kelas": "KELAS III",
+            "nama_ruang": "Tulip kelas 3",
+            "jumlah_kamar": 6,
+            "jumlah_kosong": 3,
+            "last_narik": "21\/02\/2026 09:01:16",
+            "pria": 3,
+            "wanita": 3,
+            "last_update": "21\/02\/2026 07:01:31"
+        }
+    ],
+    "sarana": [
+        {
+            "no": "1",
+            "kdppk": "",
+            "refsarana_nama": "Rekam Medik"
+        },
+        {
+            "no": "2",
+            "kdppk": "",
+            "refsarana_nama": "Laboratorium"
+        },
+        {
+            "no": "3",
+            "kdppk": "",
+            "refsarana_nama": "Radiologi"
+        },
+        {
+            "no": "4",
+            "kdppk": "",
+            "refsarana_nama": "Farmasi"
+        },
+        {
+            "no": "5",
+            "kdppk": "",
+            "refsarana_nama": "Pelayanan Darah"
+        },
+        {
+            "no": "6",
+            "kdppk": "",
+            "refsarana_nama": "Ambulan"
+        },
+        {
+            "no": "7",
+            "kdppk": "",
+            "refsarana_nama": "Pemulasaran Jenasah"
+        },
+        {
+            "no": "8",
+            "kdppk": "",
+            "refsarana_nama": "USG (Doppler) traktus urinarius"
+        },
+        {
+            "no": "9",
+            "kdppk": "",
+            "refsarana_nama": "Basic opthalmic instrument"
+        },
+        {
+            "no": "10",
+            "kdppk": "",
+            "refsarana_nama": "Mikroskop operasi"
+        },
+        {
+            "no": "11",
+            "kdppk": "",
+            "refsarana_nama": "Katarak dan Bedah Refraktif"
+        },
+        {
+            "no": "12",
+            "kdppk": "",
+            "refsarana_nama": "Phacofragmentation system"
+        }
+    ],
+    "pelayanan": [
+        {
+            "no": "1",
+            "kdppk": "0001R001",
+            "nama": "ANAK - Anak"
+        },
+        {
+            "no": "2",
+            "kdppk": "0001R001",
+            "nama": "ANESTESI DAN TERAPI INTENSIF - Anastesi"
+        },
+        {
+            "no": "3",
+            "kdppk": "0001R001",
+            "nama": "BEDAH - Bedah"
+        },
+        {
+            "no": "4",
+            "kdppk": "0001R001",
+            "nama": "PENYAKIT DALAM - Penyakit Dalam "
+        },
+        {
+            "no": "5",
+            "kdppk": "0001R001",
+            "nama": "JANTUNG DAN PEMBULUH DARAH - JANTUNG DAN PEMBULUH DARAH"
+        },
+        {
+            "no": "6",
+            "kdppk": "0001R001",
+            "nama": "MATA - Mata"
+        },
+        {
+            "no": "7",
+            "kdppk": "0001R001",
+            "nama": "OBSTETRI DAN GINEKOLOGI - obgyn"
+        },
+        {
+            "no": "8",
+            "kdppk": "0001R001",
+            "nama": "PARU - PARU"
+        },
+        {
+            "no": "9",
+            "kdppk": "0001R001",
+            "nama": "SARAF - Saraf"
+        },
+        {
+            "no": "10",
+            "kdppk": "0001R001",
+            "nama": "UMUM - Umum"
+        }
+    ]
+}
