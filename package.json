@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
+    "build:server": "BUILD_TARGET=server vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -19,6 +20,7 @@
     "vue-router": "^5.0.3"
   },
   "devDependencies": {
+    "@types/node": "^25.3.0",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vue/tsconfig": "^0.7.0",
     "typescript": "~5.8.3",
