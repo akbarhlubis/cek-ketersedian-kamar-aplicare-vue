@@ -64,7 +64,7 @@
           <span v-if="totalItem"> dari {{ totalItem }}</span>
         </p>
         <button
-          v-if="currentPage < totalPages"
+          v-if="rsList.length < totalItem"
           class="text-xs text-green-600 font-medium md:text-sm"
           @click="loadMore"
         >
@@ -144,9 +144,10 @@ const loading = ref(false)
 const loadingProvinsi = ref(false)
 const loadingDati = ref(false)
 const hasSearched = ref(false)
-const currentPage = ref(1)
+const currentStart = ref(0)
 const totalPages = ref(1)
 const totalItem = ref(0)
+const pageSize = 10
 
 const filteredList = computed(() => {
   if (!keyword.value) return rsList.value
@@ -190,7 +191,7 @@ async function onProvinsiChange() {
 
 async function onDatiChange() {
   if (!selectedDatiId.value) return
-  currentPage.value = 1
+  currentStart.value = 0
   rsList.value = []
   await fetchRS()
   // Update location store
@@ -203,13 +204,9 @@ async function fetchRS() {
   loading.value = true
   hasSearched.value = true
   try {
-    const res = await getListRS(currentPage.value, selectedDatiId.value)
+    const res = await getListRS(currentStart.value, selectedDatiId.value)
     let list: RsItem[] = res.listrs || []
-    // Client-side filter by dati if API doesn't support server-side
-    if (selectedDatiId.value) {
-      list = list.filter(rs => rs.kdppk.startsWith(selectedDatiId.value))
-    }
-    if (currentPage.value === 1) rsList.value = list
+    if (currentStart.value === 0) rsList.value = list
     else rsList.value.push(...list)
     totalPages.value = res.numberOfPages || 1
     totalItem.value = parseInt(String(res.totalItem).replace('.', '')) || 0
@@ -221,7 +218,7 @@ async function fetchRS() {
 }
 
 async function loadMore() {
-  currentPage.value++
+  currentStart.value += pageSize
   await fetchRS()
 }
 

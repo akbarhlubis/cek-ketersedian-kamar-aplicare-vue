@@ -188,11 +188,8 @@ async function loadNearbyHospitals() {
   loadingNearby.value = true
   try {
     const kddati2 = locationStore.selectedDati2?.id
-    const res = await getListRS(1, kddati2)
-    let list = res.listrs || []
-    if (kddati2) {
-      list = list.filter((rs: RsItem) => rs.kdppk.startsWith(kddati2))
-    }
+    const res = await getListRS(0, kddati2)
+    const list = res.listrs || []
     nearbyHospitals.value = list.slice(0, 8)
   } catch (e) {
     nearbyHospitals.value = []
@@ -219,7 +216,7 @@ async function loadSavedHospitals() {
   if (!locationStore.savedHospitals.length) return
   // Load first page and filter by saved kdppk
   try {
-    const res = await getListRS(1)
+    const res = await getListRS(0)
     const list: RsItem[] = res.listrs || []
     savedRsList.value = list.filter(rs => locationStore.savedHospitals.includes(rs.kdppk))
   } catch { /* silent */ }

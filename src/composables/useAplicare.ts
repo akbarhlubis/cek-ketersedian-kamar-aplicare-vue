@@ -14,6 +14,14 @@ export interface RsListResponse {
   totalItem: string
   numberOfPages: number
   listrs: any[]
+  params: {
+    pagination: {
+      start: number
+      totalItemCount: string
+      number: number
+      numberOfPages: number
+    }
+  }
 }
 
 // ── Simple in-memory cache ──
@@ -65,12 +73,25 @@ export async function getDati2(idPropinsi: string): Promise<Dati2[]> {
   return data
 }
 
-export async function getListRS(page = 1, kddati2?: string): Promise<RsListResponse> {
-  const key = `listrs_${page}_${kddati2 || 'all'}`
+const PAGE_SIZE = 10
+
+export async function getListRS(start = 0, kddati2?: string): Promise<RsListResponse> {
+  const key = `listrs_${start}_${kddati2 || 'all'}`
   const cached = getCached<RsListResponse>(key)
   if (cached) return cached
 
-  const body: Record<string, any> = { page }
+  const body: Record<string, any> = {
+    params: {
+      sort: {},
+      search: {},
+      pagination: {
+        start,
+        totalItemCount: '0',
+        number: PAGE_SIZE,
+        numberOfPages: 0
+      }
+    }
+  }
   if (kddati2) body.kddati2 = kddati2
   const res = await fetch(`${BASE}/Dashboard/getListRSPKS`, {
     method: 'POST',
