@@ -1,6 +1,7 @@
 <template>
   <div
-    class="touch-card flex-shrink-0 w-44 md:w-full border border-gray-200 rounded-2xl p-3 cursor-pointer hover:border-green-400 hover:shadow-md transition-all bg-white active:scale-[0.97]"
+    class="touch-card shrink-0 w-44 md:w-full border rounded-2xl p-3 cursor-pointer hover:border-green-400 hover:shadow-md transition-all active:scale-[0.97]"
+    :style="cardStyle"
     @click="$router.push(`/rs/${rs.kdppk}`)"
   >
     <!-- Hospital icon -->
@@ -8,7 +9,7 @@
       <i class="pi pi-building text-green-600 text-lg" />
     </div>
     <!-- Name -->
-    <p class="text-sm font-semibold text-gray-800 leading-tight line-clamp-2 mb-2">{{ rs.nmppk }}</p>
+    <p class="text-sm font-semibold leading-tight line-clamp-2 mb-2">{{ rs.nmppk }}</p>
     <!-- Room stats -->
     <div class="flex flex-wrap gap-1">
       <span v-if="rs.vip" :class="badgeClass(rs.vip)" class="text-[10px] px-1.5 py-0.5 rounded-full font-medium">
@@ -27,10 +28,6 @@
         ICU {{ rs.ICU }}
       </span>
     </div>
-    <p class="text-[10px] text-gray-400 mt-2 flex items-center gap-1">
-      <i class="pi pi-map-marker text-[10px]" />
-      {{ shortAddress(rs.nmjlnppk) }}
-    </p>
   </div>
 </template>
 
@@ -38,6 +35,14 @@
 import type { RsItem } from '../stores/hospitalStore'
 
 defineProps<{ rs: RsItem }>()
+
+import { computed } from 'vue'
+
+const cardStyle = computed(() => ({
+  background: 'var(--color-surface)',
+  color: 'var(--color-on-surface)',
+  borderColor: 'var(--color-border)'
+}))
 
 function badgeClass(count: number) {
   if (count === 0) return 'bg-red-50 text-red-500'

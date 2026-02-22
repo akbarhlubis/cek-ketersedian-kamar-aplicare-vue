@@ -7,8 +7,11 @@ import 'primeicons/primeicons.css'
 import './style.css'
 import App from './App.vue'
 import router from './router'
+import useTheme from './composables/useTheme'
 
 const app = createApp(App)
+const theme= useTheme()
+theme.init()
 
 app.use(createPinia())
 app.use(router)
@@ -21,5 +24,4 @@ app.use(PrimeVue, {
   }
 })
 app.use(ToastService)
-
 app.mount('#app')

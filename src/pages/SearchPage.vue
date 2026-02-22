@@ -93,7 +93,7 @@
           @click="$router.push(`/rs/${rs.kdppk}`)"
         >
           <div class="flex items-start gap-3">
-            <div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0">
+            <div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center shrink-0">
               <i class="pi pi-building text-green-600" />
             </div>
             <div class="flex-1 min-w-0">

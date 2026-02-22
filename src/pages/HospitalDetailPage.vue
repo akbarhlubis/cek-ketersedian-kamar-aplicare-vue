@@ -39,9 +39,9 @@
 
     <div v-else-if="data" class="content-container pt-4 pb-6 md:pb-10 space-y-4 md:space-y-6">
       <!-- Profile Card -->
-      <div class="bg-gradient-to-br from-green-600 to-green-700 rounded-2xl p-4 md:p-6 text-white">
+      <div class="bg-linear-to-br from-green-600 to-green-700 rounded-2xl p-4 md:p-6 text-white">
         <div class="flex items-start gap-3">
-          <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+          <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center shrink-0">
             <i class="pi pi-building text-white text-xl" />
           </div>
           <div class="flex-1 min-w-0">
@@ -83,7 +83,7 @@
           <button
             v-for="tab in roomTabs"
             :key="tab.key"
-            class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-colors md:px-4 md:py-2 md:text-sm"
+            class="shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-colors md:px-4 md:py-2 md:text-sm"
             :class="activeTab === tab.key
               ? 'bg-green-600 text-white'
               : 'bg-gray-100 text-gray-500 hover:bg-gray-200'"
@@ -160,7 +160,7 @@
               :key="s.no"
               class="flex items-center gap-2.5 text-sm text-gray-700"
             >
-              <i class="pi pi-check-circle text-green-500 text-sm flex-shrink-0" />
+              <i class="pi pi-check-circle text-green-500 text-sm shrink-0" />
               {{ s.refsarana_nama }}
             </div>
           </div>

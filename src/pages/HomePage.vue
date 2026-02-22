@@ -7,15 +7,26 @@
           <p class="text-xs text-gray-400 font-medium md:text-sm">Selamat datang</p>
           <h1 class="text-base font-bold text-gray-900 md:text-2xl">Cek Ketersediaan Kamar</h1>
         </div>
-        <!-- Location Button -->
-        <button
-          class="flex items-center gap-1.5 bg-green-50 text-green-700 px-3 py-1.5 rounded-full text-sm font-medium border border-green-200 active:scale-95 transition-transform md:px-4 md:py-2"
-          @click="showLocationPicker = true"
-        >
+        <!-- Wrapper Location and Dark Mode -->
+        <div class="flex items-center gap-3">
+          <!-- Location Button -->
+          <button
+            class="flex items-center gap-1.5 bg-green-50 text-green-700 px-3 py-1.5 rounded-full text-sm font-medium border border-green-200 active:scale-95 transition-transform md:px-4 md:py-2"
+            @click="showLocationPicker = true"
+          >
           <i class="pi pi-map-marker text-xs" />
           <span class="max-w-28 truncate md:max-w-none">{{ locationLabel }}</span>
           <i class="pi pi-chevron-down text-xs" />
-        </button>
+          </button> 
+          <!-- Toggle Dark Mode -->
+           <button 
+            class="text-green-700"
+            @click="toggle"
+            >
+            <i v-if="isDark" class="pi pi-sun" />            
+            <i v-else class="pi pi-moon" />
+          </button>
+        </div>
       </div>
     </div>
 
@@ -31,7 +42,7 @@
 
         <!-- Loading Skeleton -->
         <div v-if="loadingNearby" class="flex gap-3 overflow-x-auto scroll-hide pb-2 md:grid md:grid-cols-3 lg:grid-cols-4 md:overflow-visible">
-          <div v-for="n in 4" :key="n" class="flex-shrink-0 w-44 h-36 rounded-2xl bg-gray-100 animate-pulse md:w-full" />
+          <div v-for="n in 4" :key="n" class="shrink-0 w-44 h-36 rounded-2xl bg-gray-100 animate-pulse md:w-full" />
         </div>
 
         <!-- Hospital Cards -->
@@ -59,7 +70,7 @@
       <section>
         <h2 class="text-sm font-bold text-gray-800 mb-3 md:text-lg md:mb-4">Tempat Lainnya</h2>
         <div v-if="loadingDati" class="flex gap-3 overflow-x-auto scroll-hide pb-2 md:grid md:grid-cols-4 lg:grid-cols-6 md:overflow-visible">
-          <div v-for="n in 4" :key="n" class="flex-shrink-0 w-36 h-28 rounded-2xl bg-gray-100 animate-pulse md:w-full" />
+          <div v-for="n in 4" :key="n" class="shrink-0 w-36 h-28 rounded-2xl bg-gray-100 animate-pulse md:w-full" />
         </div>
         <div v-else class="flex gap-3 overflow-x-auto scroll-hide pb-2 md:grid md:grid-cols-4 lg:grid-cols-6 md:overflow-visible">
           <LocationCard
@@ -81,7 +92,7 @@
           <div
             v-for="rs in savedRsList"
             :key="rs.kdppk"
-            class="touch-card flex-shrink-0 w-44 border border-gray-200 rounded-2xl p-3 cursor-pointer hover:border-green-400 hover:shadow-md transition-all bg-white active:scale-[0.97] md:w-full"
+            class="touch-card shrink-0 w-44 border border-gray-200 rounded-2xl p-3 cursor-pointer hover:border-green-400 hover:shadow-md transition-all bg-white active:scale-[0.97] md:w-full"
             @click="$router.push(`/rs/${rs.kdppk}`)"
           >
             <div class="flex items-start justify-between mb-2">
@@ -100,7 +111,7 @@
     <Teleport to="body">
       <div
         v-if="showLocationPicker"
-        class="fixed inset-0 z-[100] flex items-end md:items-center justify-center"
+        class="fixed inset-0 z-100 flex items-end md:items-center justify-center"
       >
         <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" @click="showLocationPicker = false" />
         <div class="relative bg-white w-full md:max-w-md md:rounded-2xl rounded-t-3xl p-5 max-h-[80%] flex flex-col animate-slide-up md:animate-none md:shadow-xl">
@@ -161,7 +172,9 @@ import type { RsItem } from '../stores/hospitalStore'
 import { getProvinsi, getDati2, getListRS } from '../composables/useAplicare'
 import HospitalCard from '../components/HospitalCard.vue'
 import LocationCard from '../components/LocationCard.vue'
+import useTheme from '../composables/useTheme'
 
+const {isDark, toggle} = useTheme()
 const locationStore = useLocationStore()
 
 const loadingNearby = ref(false)

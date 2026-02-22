@@ -9,7 +9,6 @@ export default defineConfig(() => {
   return {
     plugins: [vue(), tailwindcss()],
     build: {
-      // Pastiin folder /var/www/cek-kamar sudah lo 'chown' ke user ubuntu ya!
       outDir: isServer ? '/var/www/cek-kamar' : 'dist',
       emptyOutDir: true,
     },

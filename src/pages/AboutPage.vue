@@ -35,7 +35,7 @@
           <h3 class="text-sm font-bold text-gray-800 mb-3 md:text-base">Fitur Utama</h3>
           <div class="space-y-2.5">
             <div v-for="f in features" :key="f.title" class="flex items-start gap-3">
-              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" :class="f.bg">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center shrink-0" :class="f.bg">
                 <i :class="[f.icon, f.color, 'text-sm']" />
               </div>
               <div>
